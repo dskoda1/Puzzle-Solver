@@ -4,16 +4,12 @@ import Boxes from '../components/Boxes';
 
 
 const mapStateToProps = (state) => {
-    return {
-        boxes: state
-    }
+    return state;
 }
-
 const mapDispatchToProps = (dispatch) => {
-    //Change this, need to call move box and then dispatch it
     return {
         onBoxClick: (id) => {
-            console.log(`box of id ${id} clicked on`);
+            dispatch(moveBox(id))
         }
     }
 }

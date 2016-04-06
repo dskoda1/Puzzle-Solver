@@ -1,14 +1,13 @@
 import React, { PropTypes } from 'react';
 import _ from 'lodash';
 
-const Box = ({className, style, num, onClick}) => {
+const Box = ({className, style, num, position, onClick}) => {
     
     return (
         <div 
             className={className}
             style={style}
-            onClick={() => onClick(num)}
-            >
+            onClick={() => onClick(num)} >
             <h2>{num}</h2>
             </div>
         );

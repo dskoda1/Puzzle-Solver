@@ -16,11 +16,9 @@ for (var i = 1; i < 9; ++i) {
     boxes.push({
         key: i,
         id: i,
+        position: 0,
         color: colors[Math.floor(Math.random() * colors.length)]
     });
-//   boxes.push(
-//     <Box key={i} number={i} color={colors[Math.floor(Math.random() * colors.length)]} />
-//   );
 }
 //Generate the final empty box
 boxes.push({
@@ -29,10 +27,11 @@ boxes.push({
     color: colors[Math.floor(Math.random() * colors.length)]
 });
 //Shuffle them
-boxes = _.shuffle(boxes);
-
-let store = createStore(puzzleSolverApp, boxes);
-
+var shuffledNums = _.shuffle([0,1,2,3,4,5,6,7,8]);
+_.each(shuffledNums, (num, i) => {
+  boxes[i].position = num;
+})
+let store = createStore(puzzleSolverApp, Object.assign({}, {'boxes': boxes}));
 render(
   <Provider store={store}>
     <App />
@@ -43,19 +42,3 @@ render(
 store.subscribe(() => {
         console.log(store.getState());
 });
-// store.dispatch({
-//     type: 'INCREMENT',
-//     boxId: 3
-// })
-// store.dispatch({
-//     type: 'INCREMENT',
-//     boxId: 3
-// })
-// store.dispatch({
-//     type: 'DECREMENT',
-//     boxId: 3
-// })
-// store.dispatch({
-//     type: 'INCREMENT',
-//     boxId: 3
-// })
