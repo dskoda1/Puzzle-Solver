@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import _ from 'lodash';
+import Box from './Box';
 
 const Boxes = ({boxes, onBoxClick}) => {
     
@@ -11,13 +12,14 @@ const Boxes = ({boxes, onBoxClick}) => {
             textAlign: 'center',
             height: '100px',
         };
-        return (<div 
-                key={box.id} 
-                style={divStyle} 
-                className={className} 
-                onClick={() => onBoxClick(box.id)} >
-                <h3>{box.id}</h3>
-            </div>);
+        return (
+            <Box
+                className={className}
+                style={divStyle}
+                num={box.id}
+                onClick={onBoxClick} 
+                key={box.id}/>
+       );
         
         
     });
