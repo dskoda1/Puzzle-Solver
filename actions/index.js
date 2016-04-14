@@ -18,24 +18,6 @@ export const VALID_MOVES = [
     [4,6,8],
     [5,7],
   ]
-  // export const addTodo = (text) => {
-  //   return {
-  //     type: 'ADD_TODO',
-  //     id: nextTodoId++,
-  //     text
-  //   }
-  // }
-
-// export const setVisibilityFilter = (filter) => {
-//   return {
-//     type: 'SET_VISIBILITY_FILTER',
-//     filter
-//   }
-// }
-
-// export const toggleTodo = (id) => {
-//   return {
-//     type: 'TOGGLE_TODO',
-//     id
-//   }
-// }
+  
+import boxMoves from './BoxMoves';
+export const BoxMoves = boxMoves;

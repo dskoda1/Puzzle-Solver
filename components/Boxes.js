@@ -4,7 +4,7 @@ import Box from './Box';
 
 const Boxes = ({boxes, onBoxClick}) => {
     
-    let className = 'col-xs-6 col-sm-4';
+    let className = 'col-xs-4';
     boxes = _.sortBy(boxes, 'position');
     let newBoxes = _.map(boxes, (box) => {
         var divStyle = {
@@ -19,7 +19,8 @@ const Boxes = ({boxes, onBoxClick}) => {
                 num={box.id}
                 position={box.position}
                 onClick={onBoxClick} 
-                key={box.id}/>
+                key={box.id}
+                graphic={box.graphic}/>
       );
     });
     return (
